@@ -1,0 +1,19 @@
+$(document).ready(function() {
+    
+    function get_location() {
+	if (Modernizr.geolocation) {
+	    navigator.geolocation.getCurrentPosition(show_map);
+	} else {
+	    // no native support; maybe try a fallback?
+	}
+    }
+
+    function show_map(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+	// let's show a map or do something interesting!
+	console.log("latitude:  " + latitude);
+	console.log("longitude: " + longitude);
+    }
+
+});
